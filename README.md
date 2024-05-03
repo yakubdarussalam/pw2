@@ -1,4 +1,4 @@
-#### "Repository for storing all practical activities, assignments, and exercises for Programming 2 course" ###
+#### "Repository for storing all practical activities, assignments, and exercises for Programming web 2 course" ###
 
 
 >>*NAMA : YA'KUB DARUSSALAM*
