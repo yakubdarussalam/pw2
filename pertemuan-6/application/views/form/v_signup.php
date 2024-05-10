@@ -12,7 +12,7 @@
 
     <div id="login">
         <!--form id="login_form"-->
-        <form id="login_form" method="post" action="<?php echo base_url(); ?>form/login/signup">
+        <form id="login_form" method="post" action="<?php echo base_url(); ?>index.php/form/login/signup">
             <div class="field_container">
                 <input type="text" placeholder="Name" name="name">
             </div>
@@ -23,9 +23,9 @@
                 <input type="text" placeholder="Phone" name="phone">
             </div>
             <div class="field_container">
-                <select name="" placeholder="Sex">
-                    <option value="">Male</option>
-                    <option value="">Female</option>
+                <select name="gender" placeholder="Gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
                 </select>
             </div>
             <div class="field_container">
