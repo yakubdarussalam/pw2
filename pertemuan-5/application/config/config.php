@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://pw2.test/pertemuan-5/index.php';
+$config['base_url'] = 'http://pw2.dev/pertemuan-5/index.php';
 
 /*
 |--------------------------------------------------------------------------
