@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row justify-content-center align-items-center vh-100">
@@ -66,15 +68,40 @@
                             <td>:</td>
                             <td class="table-content"><?php echo $rataNilai; ?></td>
                         </tr>
-                        
+
                     </table>
                     <div class="d-flex">
-                    <button type="submit" class="btn btn-primary my-2 mx-2">Back</button>
+                        <a href="<?php echo base_url(); ?>index.php/forms/khs"
+                            class="btn btn-primary my-2 mx-2">Back</a>
                     </div>
-                    
+
                 </div>
                 <div class="text-center mb-4">
-                    <h1 >Grade - <?php echo $grade; ?></h1>
+                    <?php
+                    $color = ''; // Inisialisasi variabel warna
+                    // Tentukan warna berdasarkan grade
+                    switch ($grade) {
+                        case 'A':
+                            $color = 'green'; // Hijau untuk grade A
+                            break;
+                        case 'B':
+                            $color = 'yellow'; // Kuning untuk grade B
+                            break;
+                        case 'C':
+                            $color = 'orange'; // Orange untuk grade C
+                            break;
+                        case 'D':
+                            $color = 'red'; // Merah untuk grade D
+                            break;
+                        case 'E':
+                            $color = 'black'; // Hitam untuk grade E
+                            break;
+                        default:
+                            $color = 'black'; // Default hitam
+                            break;
+                    }
+                    ?>
+                    <h1 style="color: <?php echo $color; ?>">Grade - <?php echo $grade; ?></h1>
                 </div>
             </div>
         </div>
@@ -89,4 +116,5 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

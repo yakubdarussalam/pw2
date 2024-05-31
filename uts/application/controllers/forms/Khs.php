@@ -18,7 +18,7 @@ class Khs extends CI_Controller
 
     }
 
-    public function save()
+   public function save()
 {
     $data['npm'] = $this->input->post('npm');
     $data['nama'] = $this->input->post('nama');
@@ -29,8 +29,14 @@ class Khs extends CI_Controller
     $data['nilaiTugas'] = $this->input->post('nilaiTugas');
     $data['nilaiKehadiran'] = $this->input->post('nilaiKehadiran');
     
+    // Bagi nilai UTS, UAS, dan tugas dengan 3 (atau nilai kehadiran dengan 14)
+    $nilaiUTS = $data['nilaiUTS']*0.3;
+    $nilaiUAS = $data['nilaiUAS']*0.4;
+    $nilaiTugas = $data['nilaiTugas']*0.2;
+    $nilaiKehadiran = ($data['nilaiKehadiran'] / 14) * 10; // Bagi nilai kehadiran dengan 14 lalu kali 10
+    
     // Perhitungan rata-rata nilai
-    $totalNilai = ($data['nilaiUTS'] + $data['nilaiUAS'] + $data['nilaiTugas'] + $data['nilaiKehadiran']) / 4;
+    $totalNilai = ($nilaiUTS + $nilaiUAS + $nilaiTugas + $nilaiKehadiran);
     
     // Klasifikasi grade nilai
     if ($totalNilai >= 86 && $totalNilai <= 100) {
@@ -72,6 +78,9 @@ class Khs extends CI_Controller
         $this->load->view('forms/khs');
     }
 }
+
+
+
 
 
 
